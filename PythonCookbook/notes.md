@@ -2,7 +2,7 @@
 
 # Python Cookbook
 
-## Data Structures and Algorithms
+## 1. Data Structures and Algorithms
 
 ### 1.12 Determine the Most Frequently Occurring Items in a Sequence
 
@@ -20,7 +20,7 @@
 * `sum([x * x for x in nums])`. Correct, but memory-inefficient, i.e., it creates a temporary list.
 * `min_shares = min(portfolio, key=lambda s: s['share'])`. This is just like argmin. Similarly, we can have argmax.
   
-## String and Text
+## 2. String and Text
 
 ### 2.15 Interpolating Variables in Strings
 * `s.format_map(vars())`, `s.format_map(locals())`, and `s.format(**locals())` 是等價的。
