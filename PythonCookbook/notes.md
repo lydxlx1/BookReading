@@ -15,6 +15,11 @@
 * `Counter.elements()`很好用，會根據每個key的counts把它們收集成一個`list`。
   * 負的counts對應的key會被忽略。
   
+### 1.19 Transforming and Reducing Data at the Same Time
+* `sum(x * x for x in nums)` vs. `sum((x * x for x in nums))`. Both works, but the first one is more elegant.
+* `sum([x * x for x in nums])`. Correct, but memory-inefficient, i.e., it creates a temporary list.
+* `min_shares = min(portfolio, key=lambda s: s['share'])`. This is just like argmin. Similarly, we can have argmax.
+  
 ## String and Text
 
 ### 2.15 Interpolating Variables in Strings
