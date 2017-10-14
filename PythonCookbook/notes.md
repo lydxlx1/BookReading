@@ -19,6 +19,18 @@
 * `sum(x * x for x in nums)` vs. `sum((x * x for x in nums))`. Both works, but the first one is more elegant.
 * `sum([x * x for x in nums])`. Correct, but memory-inefficient, i.e., it creates a temporary list.
 * `min_shares = min(portfolio, key=lambda s: s['share'])`. This is just like argmin. Similarly, we can have argmax.
+
+### 1.20 Combining Multiple Mappings into a Single Mapping
+* Prefer to use `ChainMap` from `collections`.
+* 每個dict操作都要做一次linear scan。
+* 如果有duplicate key存在，優先使用第一次出現的dict。
+* 如果mutate了ChainMap，永遠是在global的第一個dict上操作。
+* `ChainMap`存的是指針，外面改了ChainMap也會跟著變，同理，改了ChainMap，對應的dict也會改變。
+  * 使用`dict.update()`方法也可以起到類似的合併mapping的作用。相同key是後者overwrite前者。
+* `values = values.new_child()`  可以新開啟一個mapping（相當於放到最左邊）。
+* `values = values.parents` 可以把最左邊的那個mapping捨棄。
+* 這兩個method都是返回了一個新的`ChainMap`。等於類似於一種list的view的感覺。
+
   
 ## 2. String and Text
 
