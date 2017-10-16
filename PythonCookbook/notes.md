@@ -4,6 +4,11 @@
 
 ## 1. Data Structures and Algorithms
 
+### 1.6 Mapping Keys to Multiple Values in a Dictionary
+* `defaultdict(list)` or `defaultdict(set)` can be handy.
+* `d.setdefault('a', []).append(1)` is the solution for ordinary dictionary.
+* Highly related to the `__missing__()` method mentioned in [Recipe 2.15](#2.15 Interpolating Variables in Strings).
+
 ### 1.12 Determine the Most Frequently Occurring Items in a Sequence
 
 * Prefer using `collections.Counter`
