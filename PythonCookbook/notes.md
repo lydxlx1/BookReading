@@ -20,6 +20,14 @@
 * `Counter.elements()`很好用，會根據每個key的counts把它們收集成一個`list`。
   * 負的counts對應的key會被忽略。
   
+### 1.18 Mapping Names to Sequence Elements
+* `collections.namedtuple`, `namedtuple('Name', ['attr1', 'attr2', 'attr3'])`.
+* Has all the benefits as a regular tuple.
+* Very good for decoupling from the accessing elements by indices.
+* Immutable! But one can use `_replace()` method to generate a new tuple by replacing some of its attributes.
+  * Some connections to the **Builder Pattern**. Create a tuple prototype with all defaults values and use `_replace()` to fill those necessary ones.
+* Less overhead compared to a dict, if there is fewer mutation.
+  
 ### 1.19 Transforming and Reducing Data at the Same Time
 * `sum(x * x for x in nums)` vs. `sum((x * x for x in nums))`. Both works, but the first one is more elegant.
 * `sum([x * x for x in nums])`. Correct, but memory-inefficient, i.e., it creates a temporary list.
